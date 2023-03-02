@@ -14,6 +14,25 @@ router.get('/', function(req, res, next) {
   res.json(users);
 });
 
+router.get('/:userId', function(req, res, next) {
+  userId = req.req.Params.userId;
+
+  findUser = users.find(user => user.id == userId);
+
+  res.json(findUser);
+});
+
+router.post('/', function(req, res, next) {
+ 
+
+  let newUser = req.body;
+  newUser.id = users.length + 1;
+  users.push(newUser);
+  console.log(newUser);
+
+  res.json(users);
+});
+
 router.get('/test', function(req, res, next) {
   res.send('test router');
 });
