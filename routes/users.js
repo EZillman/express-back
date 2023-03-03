@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 let users = [
-  {id: 1, name: 'Choco'},
-  {id: 2, name: 'Hazel'},
-  {id: 3, name: 'Coco'},
-  {id: 4, name: 'Vanilla'},
-  {id: 5, name: 'Orange'}
+  {id: 1, name: 'Choco', password: 'Marabou'},
+  {id: 2, name: 'Hazel', password: 'Nutella'},
+  {id: 3, name: 'Coco', password: 'Coconut'},
+  {id: 4, name: 'Vanilla', password: 'Cake'},
+  {id: 5, name: 'Orange', password: 'Cookie'}
 ]
 
 /* GET users listing. */
