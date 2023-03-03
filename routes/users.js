@@ -33,8 +33,23 @@ router.post('/', function(req, res, next) {
   res.json(users);
 });
 
+
+router.post('/login', function(req, res, next) {
+  const { name, password } = req.body;
+  const foundUser = users.find(user => user.name === name);
+
+  if(password === foundUser.password) {
+    res.status(201).json({name: foundUser.name, id: foundUser.id});
+  } else {
+    res.status(401).json('Incorrect username or password');
+  }
+  console.log(password);
+});
+
 router.get('/test', function(req, res, next) {
   res.send('test router');
-});
+}); 
+
+
 
 module.exports = router;
