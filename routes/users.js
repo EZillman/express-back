@@ -15,9 +15,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:userId', function(req, res, next) {
-  userId = req.req.Params.userId;
+  userId = req.Params.userId;
 
-  findUser = users.find(user => user.id == userId);
+  let findUser = users.find(user => user.id == userId);
 
   res.json(findUser);
 });
